@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ru" class="html-hidden">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <style>
+      html.html-hidden {
+        width: 100%;
+        overflow: hidden
+      }
+
+      .preload {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: url('img/preload.svg') no-repeat center center #000;
+        background-size: 150px 150px;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+
+      .html-hidden body {
+        overflow: hidden
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1
+        }
+
+        to {
+          opacity: 0;
+          visibility: hidden
+        }
+      }
+
+      .preload_hide {
+        animation: fadeOut .5s cubic-bezier(0, 0, .2, 1) forwards
+      }
+    </style>
+    <style>
+      .hamburger{background-color:transparent;border:0;color:inherit;display:inline-block;font:inherit;margin:0;overflow:visible;padding:0;text-transform:none}.hamburger-box{display:inline-block;height:18px;position:relative;width:45px}.hamburger-inner{display:block;margin-top:-1px;top:50%}.hamburger-inner,.hamburger-inner:after,.hamburger-inner:before{background-color:#fff;border-radius:4px;height:2px;position:absolute;width:45px}.hamburger-inner:after,.hamburger-inner:before{content:"";display:block}.hamburger-inner:before{top:-8px}.hamburger-inner:after{bottom:-8px}.hamburger--collapse .hamburger-inner{bottom:0;top:auto}.hamburger--collapse .hamburger-inner:after{top:-16px}:root{--swiper-theme-color:#007aff}.swiper{list-style:none;margin-left:auto;margin-right:auto;overflow:hidden;padding:0}.swiper,.swiper-wrapper{position:relative;z-index:1}.swiper-wrapper{box-sizing:content-box;display:flex;transform:translateZ(0)}.swiper-slide,.swiper-wrapper{height:100%;width:100%}.swiper-slide{flex-shrink:0;position:relative}*,:after,:before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{background-color:var(--bs-body-bg);color:var(--bs-body-color);font-family:var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);margin:0;text-align:var(--bs-body-text-align)}h3{font-weight:500;line-height:1.2;margin-bottom:.5rem;margin-top:0}h3{font-size:calc(1.3rem + .6vw)}p{margin-bottom:1rem;margin-top:0}strong{font-weight:bolder}a{color:var(--bs-link-color);text-decoration:underline}img,svg{vertical-align:middle}button{border-radius:0}button{font-family:inherit;font-size:inherit;line-height:inherit;margin:0;text-transform:none}[type=button],button{-webkit-appearance:button}::-moz-focus-inner{border-style:none;padding:0}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{-webkit-appearance:button;font:inherit}:root{--bs-blue:#0d6efd;--bs-indigo:#6610f2;--bs-purple:#6f42c1;--bs-pink:#d63384;--bs-red:#dc3545;--bs-orange:#fd7e14;--bs-yellow:#ffc107;--bs-green:#198754;--bs-teal:#20c997;--bs-cyan:#0dcaf0;--bs-black:#000;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-gray-100:#f8f9fa;--bs-gray-200:#e9ecef;--bs-gray-300:#dee2e6;--bs-gray-400:#ced4da;--bs-gray-500:#adb5bd;--bs-gray-600:#6c757d;--bs-gray-700:#495057;--bs-gray-800:#343a40;--bs-gray-900:#212529;--bs-primary:#0d6efd;--bs-secondary:#6c757d;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;--bs-light:#f8f9fa;--bs-dark:#212529;--bs-primary-rgb:13,110,253;--bs-secondary-rgb:108,117,125;--bs-success-rgb:25,135,84;--bs-info-rgb:13,202,240;--bs-warning-rgb:255,193,7;--bs-danger-rgb:220,53,69;--bs-light-rgb:248,249,250;--bs-dark-rgb:33,37,41;--bs-white-rgb:255,255,255;--bs-black-rgb:0,0,0;--bs-body-color-rgb:33,37,41;--bs-body-bg-rgb:255,255,255;--bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--bs-gradient:linear-gradient(180deg,hsla(0,0%,100%,.15),hsla(0,0%,100%,0));--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#212529;--bs-body-bg:#fff;--bs-border-width:1px;--bs-border-style:solid;--bs-border-color:#dee2e6;--bs-border-color-translucent:rgba(0,0,0,.175);--bs-border-radius:0.375rem;--bs-border-radius-sm:0.25rem;--bs-border-radius-lg:0.5rem;--bs-border-radius-xl:1rem;--bs-border-radius-2xl:2rem;--bs-border-radius-pill:50rem;--bs-link-color:#0d6efd;--bs-link-hover-color:#0a58ca;--bs-code-color:#d63384;--bs-highlight-bg:#fff3cd}.container{--bs-gutter-x:4rem;--bs-gutter-y:0;margin-left:auto;margin-right:auto;padding-left:calc(var(--bs-gutter-x)*.5);padding-right:calc(var(--bs-gutter-x)*.5);width:100%}.row{--bs-gutter-x:4rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-left:calc(var(--bs-gutter-x)*-.5);margin-right:calc(var(--bs-gutter-x)*-.5);margin-top:calc(var(--bs-gutter-y)*-1)}.row>*{box-sizing:border-box;flex-shrink:0;margin-top:var(--bs-gutter-y);max-width:100%;padding-left:calc(var(--bs-gutter-x)*.5);padding-right:calc(var(--bs-gutter-x)*.5);width:100%}.col-6{flex:0 0 auto;width:50%}.d-none{display:none!important}.align-items-center{align-items:center!important}:root{--fontFamily:"Onest";--fontSize:2rem;--bodyBackground:#dcdcdc;--textColor:#212121;--primary:#f0573c;--primaryLight:#f38774;--primaryDarken:#f34020;--secondary:#3686ff;--secondaryLight:#6fa9ff;--secondaryDarken:#1f79ff;--headerHeight:90px;--minHeaderHegiht:70px;--sectionIndent:5rem;--sectionTitle:6.4rem}@media (max-width:991.98px){:root{--headerHeight:60px;--minHeaderHegiht:50px;--sectionTitle:5rem;--sectionIndent:4rem}}@media (max-width:767.98px){:root{--headerHeight:50px}}@media (max-width:575.98px){:root{--sectionTitle:4rem}}@font-face{font-display:swap;font-family:Doorman;font-style:normal;font-weight:400;src:url(font/Doorman.woff) format("woff"),url(font/Doorman.woff2) format("woff2")}:root{scroll-behavior:auto}*{box-sizing:border-box;margin:0;outline:0!important;padding:0}a{color:var(--textColor);text-decoration:none}html{font-size:62.5%}h3{font-size:1.9rem;margin-bottom:1em}body{-webkit-text-size-adjust:100%;background:var(--bodyBackground);color:var(--textColor);display:flex;flex-direction:column;font-family:var(--fontFamily);font-size:var(--fontSize);font-weight:300;line-height:1.5;min-height:100vh;overflow-x:hidden;overflow-y:auto;position:relative;visibility:visible}img{display:block}.ray{--width:7.5rem;--height:34rem;height:var(--height);overflow:hidden;position:relative;width:var(--width)}.ray:before{background:#f0573c;content:"";display:block;mix-blend-mode:screen;z-index:2}.ray:before,.ray__img{height:100%;left:0;position:absolute;top:0;width:100%}.ray__img{-o-object-fit:cover;object-fit:cover;transform-origin:center center}.ray__img-wrapper{height:calc(var(--height)*2);left:50%;position:absolute;top:50%;transform:translate(-50%,-50%);width:calc(var(--height)*2)}.sun{-webkit-clip-path:polygon(50% 50%,27% 0,0 27%);clip-path:polygon(50% 50%,27% 0,0 27%);font-size:1rem;height:154em;left:0;position:absolute;top:0;width:154em}.sun__ray{--width:7.5em;--height:34em}.sun__rays{transform-origin:center center}.sun__circle,.sun__rays{height:100%;left:0;position:absolute;top:0;width:100%}@media (max-width:1199.98px){.sun{font-size:.8rem}}@media (max-width:991.98px){.sun{font-size:.6rem}}.mobile-menu{align-items:center;display:flex;flex-direction:column;justify-content:center;min-height:100vh;padding:2rem}.mobile-menu-item{color:#fff!important;font-size:3rem;font-weight:500;line-height:1.2;margin-bottom:2rem;opacity:0;text-align:center;text-transform:uppercase;transform:translateY(1rem)}.mobile-menu-item:last-child{margin-bottom:0}.mobile-menu-layout{background:rgba(0,0,0,.9);left:0;max-height:100vh;opacity:0;overflow:auto;position:fixed;top:0;visibility:hidden;width:100%;z-index:100}@media (max-width:575.98px){.mobile-menu-item{font-size:2.5rem}}.icon{font-size:10px}.text-field{--fontSize:2rem;color:var(--textColor)}.text-field strong{font-weight:500}.text-field p{margin-bottom:1.25em}.text-field p{font-size:var(--fontSize)}.text-field p:last-child{margin-bottom:0}.text-field_white{color:#fff}.logo{display:block;height:30px}.logo__img{height:auto;max-height:100%;max-width:100%;-o-object-fit:contain;object-fit:contain;width:auto}.nav{align-items:center;display:flex}.nav__item{color:#fff!important;display:block;font-size:1.4rem;font-weight:400;margin-left:1.8rem;margin-right:1.8rem;padding-left:.1rem;padding-right:.1rem;position:relative}.nav__item-text{position:relative;z-index:2}.nav__item:first-child{margin-left:0}.nav__item:last-child{margin-left:auto;margin-right:0}.nav__item:before{background:var(--primary);content:"";display:block;height:calc(100% - .4rem);left:0;position:absolute;top:0;width:0}.header{width:100%}.header{align-items:center;display:flex;height:var(--headerHeight);left:0;padding-bottom:1rem;padding-top:1rem;position:fixed;top:0;z-index:1000}.hamburger{display:flex;margin-left:2rem;position:relative;z-index:101}@media (max-width:991.98px){.header{padding-bottom:.5rem;padding-top:.5rem}.header__nav-col{display:flex;justify-content:flex-end}}.section-title{font-family:Doorman;font-size:var(--sectionTitle);font-weight:400;line-height:1;margin-bottom:4rem;text-transform:capitalize}.section-title_secondary{color:var(--secondary)}.section-title_large{font-size:9.6rem}@media (max-width:1399.98px){.section-title_large{font-size:9rem}}@media (max-width:1199.98px){.section-title_large{font-size:var(--sectionTitle)}}.carousel-pagination{align-items:center;display:flex;flex-wrap:nowrap}.main-carousel,.main-carousel-slide:before{height:100%;left:0;position:absolute;top:0;width:100%}.main-carousel-slide:before{background:rgba(0,0,0,.7);content:"";display:block;z-index:2}.main-carousel-slide__img{height:100%;left:0;-o-object-fit:cover;object-fit:cover;position:absolute;top:0;width:100%}.button{align-items:center;background:#212121;border:none;color:#fff!important;display:flex;font-size:2rem;font-weight:500;justify-content:center;line-height:1.2;max-width:100%;min-height:4.8rem;position:relative;text-align:center;width:30rem}.button__text{position:relative;z-index:2}.button:before{background:var(--primary);content:"";display:block;height:100%;left:0;position:absolute;top:0;width:0}.section{overflow:hidden;padding-bottom:var(--sectionIndent);padding-top:var(--sectionIndent)}.main-screen{overflow:hidden;padding-top:0}.main-screen__inner{display:flex;margin-bottom:4rem;min-height:68rem;padding-bottom:2.5rem;padding-top:calc(var(--headerHeight) + var(--sectionIndent));position:relative}.main-screen__container{display:flex;position:relative;z-index:2}.main-screen__container>.row{flex-grow:1}.main-screen__text-field{--line-width:27rem;margin-bottom:8rem;margin-left:auto;max-width:calc(300px + var(--line-width)/ 2);padding-bottom:2rem;padding-left:calc(var(--line-width)/2);position:relative}.main-screen__text-field:before{background:#8a8a8a;bottom:0;content:"";display:block;height:1px;left:0;position:absolute;width:var(--line-width)}.main-screen__content-col{display:flex;flex-direction:column}.main-screen__title{margin-bottom:2.4rem;margin-top:auto}.main-screen__sun{top:calc(var(--sectionIndent)*-1/2)}@media (max-width:1399.98px){.main-screen__text-field{padding-left:calc(var(--line-width)/3)}}@media (max-width:1199.98px){.main-screen__text-field{margin-bottom:4rem;max-width:none}.main-screen__inner{min-height:56rem}}@media (max-width:991.98px){.main-screen__inner{min-height:50rem}}@media (max-width:767.98px){.main-screen__sun{display:none}.main-screen__inner{min-height:40rem}.main-screen__btn{margin-left:auto;margin-right:auto}}@media (max-width:575.98px){.main-screen__text-field{padding-left:0}}.circle-button__inner{height:calc(var(--size)*2);margin-top:-.4rem;transform:translateY(-50%)}.circle-button__icon{color:var(--color)}.circle-button__icon-wrapper{align-items:center;display:flex;height:var(--size)}@media (max-width:991.98px){.circle-button__icon{font-size:.8rem}}@media (max-width:767.98px){.hometown-section__desc-col{margin-bottom:var(--sectionIndent)}}.homemade-section__title{margin-top:calc((.75em + var(--sectionIndent))*-1)}.masked-img{height:auto;max-width:100%}.masked-img-wrapper{display:inline-flex;-webkit-mask-image:url(img/Vector.svg);mask-image:url(img/Vector.svg);-webkit-mask-position:center center;mask-position:center center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:100%;mask-size:100%;overflow:hidden}.homegrown-section__desc{margin-bottom:4rem}.homegrown-section__img-col{display:flex;justify-content:center}.team-member__photo{align-self:start;grid-area:photo;-ms-grid-column:1;-ms-grid-row:1;padding-top:100%;position:relative}.team-member__info{grid-area:info;-ms-grid-column:3;-ms-grid-row:1}.team-member__button{--size:3.7rem;align-self:start;grid-area:icon;-ms-grid-column:5;-ms-grid-row:1}.team-member__more-row{-ms-grid-column-span:5;grid-area:more;-ms-grid-column:1;-ms-grid-row:2;margin-left:-1.4rem;margin-right:-1.4rem;position:relative}@media (max-width:1399.98px){html{font-size:54%}}
+    </style>
+    <link href="./css/style.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="./css/style.css" rel="stylesheet"></noscript>
+    <script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var t,o=loadCSS.relpreload={};o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},o.support()||(o.poly(),t=n.setInterval(o.poly,500),n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})),"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
+  </head>
+
+  <body>
+    <div class="preload"></div>
+    <header class="header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-2 col-6 header__logo-col">
+            <a href="#" class="logo">
+              <img src="img/logo.svg" alt="grand roosevelt" class="logo__img">
+            </a>
+          </div>
+          <div class="col-lg-10 col-6 header__nav-col">
+            <nav class="nav d-none d-lg-flex">
+              <a href="#hometown" class="nav__item"><span class="nav__item-text">Hometown Story</span></a>
+              <a href="#homegrown" class="nav__item"><span class="nav__item-text">Homegrown Talent</span></a>
+              <a href="#experiences" class="nav__item"><span class="nav__item-text">Homemade Cannabis Experiences</span></a>
+              <a href="#homeroom" class="nav__item"><span class="nav__item-text">Homeroom</span></a>
+              <a href="#contacts" class="nav__item"><span class="nav__item-text">Contacts</span></a>
+            </nav> <button class="hamburger hamburger--collapse d-lg-none" type="button">
+              <span class="hamburger-box">
+	            <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-menu-layout">
+        <div class="mobile-menu">
+          <a href="#hometown" class="mobile-menu-item">Hometown Story</a>
+          <a href="#homegrown" class="mobile-menu-item">Homegrown Talent</a>
+          <a href="#experiences" class="mobile-menu-item">Homemade Cannabis Experiences</a>
+          <a href="#homeroom" class="mobile-menu-item">Homeroom</a>
+          <a href="#contacts" class="mobile-menu-item">Contacts</a>
+        </div>
+      </div>
+    </header>
+    <section class="section main-screen">
+      <div class="main-screen__inner">
+        <div class="swiper main-carousel">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide main-carousel-slide">
+              <img src="img/main-1.jpg" alt="grand roosevelt" class="main-carousel-slide__img">
+            </div>
+            <div class="swiper-slide main-carousel-slide">
+              <img src="img/main-2.jpg" alt="grand roosevelt" class="main-carousel-slide__img">
+            </div>
+            <div class="swiper-slide main-carousel-slide">
+              <img src="img/main-3.jpg" alt="grand roosevelt" class="main-carousel-slide__img">
+            </div>
+          </div>
+        </div>
+        <div class="container main-screen__container">
+          <div class="row">
+            <div class="main-screen__content-col col-xl-6 col-md-7 offset-md-5 offset-xl-6">
+              <div class="text-field text-field_white main-screen__text-field">
+                <p>Roosevelt & Grand is a Black, Women and LGBTQ owned business committed to creating <strong>quality yet accessible experiences</strong> centered on community and cannabis. </p>
+
+              </div>
+              <h3 class="section-title section-title_secondary section-title_large main-screen__title">Refined <br>Quality for All</h3>
+              <div class="carousel-pagination main-screen__carousel-pagination"></div>
+            </div>
+          </div>
+          <div class="sun main-screen__sun" id="sun">
+            <svg viewBox="0 0 1280 1280" class="sun__circle">
+              <circle id="sun-path" cx="640" cy="640" r="640" fill="none" transform="rotate(-120 640 640)" />
+            </svg>
+            <div class="sun__rays">
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-1.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-2.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-3.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-1.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-2.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-3.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-1.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-2.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-3.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-1.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-2.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-3.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-1.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-2.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-3.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-1.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-2.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-3.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-1.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-2.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-3.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-1.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-2.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+              <div class="ray sun__ray">
+                <div class="ray__img-wrapper">
+                  <img src="img/main-3.jpg" alt="image" class="ray__img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container main-screen__container">
+        <div class="row">
+          <div class="col-xl-6 col-md-7 offset-md-5 offset-xl-6">
+            <a href="#homegrown" class="button main-screen__btn">
+              <span class="button__text">
+    More abut us
+  </span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="section hometown-section" id="hometown">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-8 offset-xl-1 col-lg-8 col-md-7 hometown-section__desc-col">
+            <h3 class="section-title fade-in-section-title">Hometown <br>Story <a href="#hometown" class="circle-button section-title__circle-button">
+                <span class="circle-button__inner">
+    <span class="circle-button__icon-wrapper">
+      <svg class="icon circle-button__icon icon-arrow">
+        <use xlink:href="#arrow"/>
+      </svg>
+    </span>
+                <span class="circle-button__icon-wrapper">
+      <svg class="icon circle-button__icon icon-arrow">
+        <use xlink:href="#arrow"/>
+      </svg>
+    </span>
+                </span>
+              </a>
+            </h3>
+            <div class="text-field hometown-section__desc">
+              <p>Our founders are a diverse team of native and long-time Detroiters with an entrenched love for the city, commitment to its revitalization, and record of giving back.</p>
+              <p>We believe that the cannabis industry—with community-focused leadership at the helm—promises to be a key driver of economic development and opportunity for Detroit residents and we center this belief in our business practices, projects, and products.</p>
+              <p>We strive to model what it means to be a thriving and community-centered cannabis enterprise.</p>
+
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-5 hometown-section__image-col">
+            <div class="striped-image">
+              <img src="img/hometown.jpg" alt="image" class="striped-image__img" loading="lazy" width="300" height="445">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="section homemade-section" id="experiences">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5 offset-xl-1 col-lg-6 col-md-5 homemade-section__list-col align-self-center">
+            <h3 class="section-title section-title_secondary homemade-section__title d-md-none fade-in-section-title"> Homemade <br>Cannabis <br>Experiences
+            </h3>
+            <div class="homemade-list">
+              <div class="homemade-list-item">
+                <div class="homemade-list-item__icon">
+                  <img src="img/homemade-1.svg" alt="" class="homemade-list-item__icon-img" loading="lazy">
+                </div>
+                <div class="homemade-list-item__title-col">
+                  <p class="homemade-list-item__title">Curate Innovative Experiences</p>
+                </div>
+              </div>
+              <div class="homemade-list-item">
+                <div class="homemade-list-item__icon">
+                  <img src="img/homemade-2.svg" alt="" class="homemade-list-item__icon-img" loading="lazy">
+                </div>
+                <div class="homemade-list-item__title-col">
+                  <p class="homemade-list-item__title">Cultivate Community Connections</p>
+                </div>
+              </div>
+              <div class="homemade-list-item">
+                <div class="homemade-list-item__icon">
+                  <img src="img/homemade-3.svg" alt="" class="homemade-list-item__icon-img" loading="lazy">
+                </div>
+                <div class="homemade-list-item__title-col">
+                  <p class="homemade-list-item__title">Champion Local Causes</p>
+                </div>
+              </div>
+              <div class="homemade-list-item">
+                <div class="homemade-list-item__icon">
+                  <img src="img/homemade-4.svg" alt="" class="homemade-list-item__icon-img" loading="lazy">
+                </div>
+                <div class="homemade-list-item__title-col">
+                  <p class="homemade-list-item__title">Create Sustainable Value</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-7 homemade-section__desc-col">
+            <h3 class="section-title section-title_secondary homemade-section__title d-none d-md-block fade-in-section-title"> Homemade <br>Cannabis <br>Experiences
+            </h3>
+            <div class="text-field homemade-section__desc text-field_white">
+              <p>Our dispensary and consumption lounge will leverage technology, design, and community-building principles to curate inclusive cannabis experiences that are world-class yet distinctively Detroit.</p>
+              <p>Our consumer-first approach will enable us to harness the best of what local Detroiters have to offer and to grow symbiotically with the community, not in opposition to it.</p>
+
+            </div>
+            <div class="coming">
+              <h3 class="section-title coming__title"> Coming <br>in 2023
+              </h3> <img src="img/coming.jpg" alt="image" class="coming__img" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="section homegrown-section" id="homegrown">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h3 class="section-title section-title_primary fade-in-section-title"> Homegrown <br>Talent
+            </h3>
+            <div class="text-field homegrown-section__desc">
+              <p>Our Black, Women, and LGBTQ ownership and leadership proudly reflects the diversity of the city. We are seasoned professionals with successful careers in tech, law, operations, management consulting, government and nonprofit leadership. </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-4 d-none d-xl-block homegrown-section__img-col">
+            <div class="masked-img-wrapper homegrown-section__masked-img">
+              <img src="img/homegrown-section.jpg" alt="image" class="masked-img masked-image-animation" loading="lazy" width="414" height="414">
+            </div>
+          </div>
+          <div class="col-xl-8">
+            <div class="team row">
+              <div class="col-md-6 team__item">
+                <div class="team-member">
+                  <div class="team-member__photo">
+                    <div class="masked-img-wrapper team-member__photo-img">
+                      <img src="img/team-member-1.jpg" alt="image" class="masked-img" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="team-member__info">
+                    <p class="team-member__name">Kevin Hatcher</p>
+                    <p class="team-member__position">Founder &amp; CEO (Facebook/Meta, Coursera, Teach For America)</p>
+                  </div>
+                  <button class="circle-button team-member__button team-member__button_minus circle-button_secondary">
+                    <span class="circle-button__inner">
+                  <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-minus">
+                      <use xlink:href="#minus"/>
+                    </svg>
+                  </span>
+                    <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-minus">
+                      <use xlink:href="#minus"/>
+                    </svg>
+                  </span>
+                    </span>
+                  </button>
+                  <button class="circle-button team-member__button team-member__button_plus circle-button_secondary">
+                    <span class="circle-button__inner">
+                  <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-plus">
+                      <use xlink:href="#plus"/>
+                    </svg>
+                  </span>
+                    <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-plus">
+                      <use xlink:href="#plus"/>
+                    </svg>
+                  </span>
+                    </span>
+                  </button>
+                  <div class="team-member__more-row">
+                    <div class="team-member__more-wrapper">
+                      <div class="team-member__more">
+                        <div class="text-field team-member__desc">
+                          <p>Expanding access to knowledge and opportunity has sewn the common thread throughout
+                            Kevin Hatcher’s professional endeavors. With AmeriCorps and Teach for America in Detroit,
+                            with Coursera and Facebook in Silicon Valley, and as a Fulbright Scholar in Morocco, each new undertaking for the
+                            past 15 years has developed more skill-building tools and scaled more
+                            life-changing resources to reach more people, grant more access, and facilitate more
+                            advancement.</p>
+                          <p>Altogether these achievements have strengthened Kevin’s knack for entering new high potential
+                            arenas, capitalizing on high growth objectives, and executing strategies to build out business
+                            units from zero to one — and then from one to scale.</p>
+                          <p>For the emerging cannabis industry in Detroit, Kevin’s skill set is especially optimal. Convinced that true
+                            empowerment for Detroiters demands more homegrown entrepreneurs, Kevin is
+                            devoted to bolstering members of his community with the resources, access, and support
+                            necessary to fracture cycles of poverty and leverage opportunities for business development
+                            across this new frontier.</p>
+                          <p>Kevin’s ultimate vision is for Detroit to model what it means to achieve economic rebirth without
+                            discounting its most often overlooked residents in the process. Recognizing the monumental
+                            promise of economic value the cannabis industry will bring to Detroit, he regards no place better
+                            suited to prove that revitalization does not have to mean gentrification.</p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 team__item">
+                <div class="team-member">
+                  <div class="team-member__photo">
+                    <div class="masked-img-wrapper team-member__photo-img">
+                      <img src="img/team-member-2.jpg" alt="image" class="masked-img" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="team-member__info">
+                    <p class="team-member__name">Alicia Hatcher</p>
+                    <p class="team-member__position">VP Community Relations (Horatio Williams Foundation)</p>
+                  </div>
+                  <button class="circle-button team-member__button team-member__button_minus circle-button_secondary">
+                    <span class="circle-button__inner">
+                  <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-minus">
+                      <use xlink:href="#minus"/>
+                    </svg>
+                  </span>
+                    <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-minus">
+                      <use xlink:href="#minus"/>
+                    </svg>
+                  </span>
+                    </span>
+                  </button>
+                  <button class="circle-button team-member__button team-member__button_plus circle-button_secondary">
+                    <span class="circle-button__inner">
+                  <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-plus">
+                      <use xlink:href="#plus"/>
+                    </svg>
+                  </span>
+                    <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-plus">
+                      <use xlink:href="#plus"/>
+                    </svg>
+                  </span>
+                    </span>
+                  </button>
+                  <div class="team-member__more-row">
+                    <div class="team-member__more-wrapper">
+                      <div class="team-member__more">
+                        <div class="text-field team-member__desc">
+                          <p>Expanding access to knowledge and opportunity has sewn the common thread throughout
+                            Kevin Hatcher’s professional endeavors. With AmeriCorps and Teach for America in Detroit,
+                            with Coursera and Facebook in Silicon Valley, and as a Fulbright Scholar in Morocco, each new undertaking for the
+                            past 15 years has developed more skill-building tools and scaled more
+                            life-changing resources to reach more people, grant more access, and facilitate more
+                            advancement.</p>
+                          <p>Altogether these achievements have strengthened Kevin’s knack for entering new high potential
+                            arenas, capitalizing on high growth objectives, and executing strategies to build out business
+                            units from zero to one — and then from one to scale.</p>
+                          <p>For the emerging cannabis industry in Detroit, Kevin’s skill set is especially optimal. Convinced that true
+                            empowerment for Detroiters demands more homegrown entrepreneurs, Kevin is
+                            devoted to bolstering members of his community with the resources, access, and support
+                            necessary to fracture cycles of poverty and leverage opportunities for business development
+                            across this new frontier.</p>
+                          <p>Kevin’s ultimate vision is for Detroit to model what it means to achieve economic rebirth without
+                            discounting its most often overlooked residents in the process. Recognizing the monumental
+                            promise of economic value the cannabis industry will bring to Detroit, he regards no place better
+                            suited to prove that revitalization does not have to mean gentrification.</p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 team__item">
+                <div class="team-member">
+                  <div class="team-member__photo">
+                    <div class="masked-img-wrapper team-member__photo-img">
+                      <img src="img/team-member-3.jpg" alt="image" class="masked-img" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="team-member__info">
+                    <p class="team-member__name">George Hardy, MBA</p>
+                    <p class="team-member__position">CFO (Deloitte, Teach For America)</p>
+                  </div>
+                  <button class="circle-button team-member__button team-member__button_minus circle-button_secondary">
+                    <span class="circle-button__inner">
+                  <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-minus">
+                      <use xlink:href="#minus"/>
+                    </svg>
+                  </span>
+                    <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-minus">
+                      <use xlink:href="#minus"/>
+                    </svg>
+                  </span>
+                    </span>
+                  </button>
+                  <button class="circle-button team-member__button team-member__button_plus circle-button_secondary">
+                    <span class="circle-button__inner">
+                  <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-plus">
+                      <use xlink:href="#plus"/>
+                    </svg>
+                  </span>
+                    <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-plus">
+                      <use xlink:href="#plus"/>
+                    </svg>
+                  </span>
+                    </span>
+                  </button>
+                  <div class="team-member__more-row">
+                    <div class="team-member__more-wrapper">
+                      <div class="team-member__more">
+                        <div class="text-field team-member__desc">
+                          <p>Expanding access to knowledge and opportunity has sewn the common thread throughout
+                            Kevin Hatcher’s professional endeavors. With AmeriCorps and Teach for America in Detroit,
+                            with Coursera and Facebook in Silicon Valley, and as a Fulbright Scholar in Morocco, each new undertaking for the
+                            past 15 years has developed more skill-building tools and scaled more
+                            life-changing resources to reach more people, grant more access, and facilitate more
+                            advancement.</p>
+                          <p>Altogether these achievements have strengthened Kevin’s knack for entering new high potential
+                            arenas, capitalizing on high growth objectives, and executing strategies to build out business
+                            units from zero to one — and then from one to scale.</p>
+                          <p>For the emerging cannabis industry in Detroit, Kevin’s skill set is especially optimal. Convinced that true
+                            empowerment for Detroiters demands more homegrown entrepreneurs, Kevin is
+                            devoted to bolstering members of his community with the resources, access, and support
+                            necessary to fracture cycles of poverty and leverage opportunities for business development
+                            across this new frontier.</p>
+                          <p>Kevin’s ultimate vision is for Detroit to model what it means to achieve economic rebirth without
+                            discounting its most often overlooked residents in the process. Recognizing the monumental
+                            promise of economic value the cannabis industry will bring to Detroit, he regards no place better
+                            suited to prove that revitalization does not have to mean gentrification.</p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 team__item">
+                <div class="team-member">
+                  <div class="team-member__photo">
+                    <div class="masked-img-wrapper team-member__photo-img">
+                      <img src="img/team-member-4.jpg" alt="image" class="masked-img" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="team-member__info">
+                    <p class="team-member__name">Michael Einheuser</p>
+                    <p class="team-member__position">VP Government and Private Sector Engagement (Einheuser Legal Group)</p>
+                  </div>
+                  <button class="circle-button team-member__button team-member__button_minus circle-button_secondary">
+                    <span class="circle-button__inner">
+                  <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-minus">
+                      <use xlink:href="#minus"/>
+                    </svg>
+                  </span>
+                    <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-minus">
+                      <use xlink:href="#minus"/>
+                    </svg>
+                  </span>
+                    </span>
+                  </button>
+                  <button class="circle-button team-member__button team-member__button_plus circle-button_secondary">
+                    <span class="circle-button__inner">
+                  <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-plus">
+                      <use xlink:href="#plus"/>
+                    </svg>
+                  </span>
+                    <span class="circle-button__icon-wrapper">
+                    <svg class="icon circle-button__icon icon-plus">
+                      <use xlink:href="#plus"/>
+                    </svg>
+                  </span>
+                    </span>
+                  </button>
+                  <div class="team-member__more-row">
+                    <div class="team-member__more-wrapper">
+                      <div class="team-member__more">
+                        <div class="text-field team-member__desc">
+                          <p>Expanding access to knowledge and opportunity has sewn the common thread throughout
+                            Kevin Hatcher’s professional endeavors. With AmeriCorps and Teach for America in Detroit,
+                            with Coursera and Facebook in Silicon Valley, and as a Fulbright Scholar in Morocco, each new undertaking for the
+                            past 15 years has developed more skill-building tools and scaled more
+                            life-changing resources to reach more people, grant more access, and facilitate more
+                            advancement.</p>
+                          <p>Altogether these achievements have strengthened Kevin’s knack for entering new high potential
+                            arenas, capitalizing on high growth objectives, and executing strategies to build out business
+                            units from zero to one — and then from one to scale.</p>
+                          <p>For the emerging cannabis industry in Detroit, Kevin’s skill set is especially optimal. Convinced that true
+                            empowerment for Detroiters demands more homegrown entrepreneurs, Kevin is
+                            devoted to bolstering members of his community with the resources, access, and support
+                            necessary to fracture cycles of poverty and leverage opportunities for business development
+                            across this new frontier.</p>
+                          <p>Kevin’s ultimate vision is for Detroit to model what it means to achieve economic rebirth without
+                            discounting its most often overlooked residents in the process. Recognizing the monumental
+                            promise of economic value the cannabis industry will bring to Detroit, he regards no place better
+                            suited to prove that revitalization does not have to mean gentrification.</p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="section homeroom-section" id="homeroom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 offset-lg-8 col-md-8">
+            <h3 class="section-title fade-in-section-title"> Homeroom
+            </h3>
+            <div class="text-field homegrown-section__desc d-lg-none">
+              <p>Here you can find educational resources and research-backed facts about Cannabis and the Cannabis industry.</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="jobs-list row">
+              <div class="col-sm-3 col-6 jobs-list__col">
+                <a href="#" class="jobs-item">
+                  <p class="jobs-item__title">Cannabis jobs <br>
+                    and markets, <br>
+                    state by state</p>
+                  <div class="jobs-item-flip">
+                    <div class="jobs-item-flip__front">
+                      <div class="masked-img-wrapper jobs-item__masked-img">
+                        <img src="img/job.jpg" alt="image" class="masked-img" loading="lazy">
+                      </div>
+                    </div>
+                    <div class="jobs-item-flip__back">
+                      <div class="masked-img-wrapper jobs-item__masked-img jobs-item__masked-img_back">
+                        <img src="img/job.jpg" alt="image" class="masked-img masked-image-animation" loading="lazy">
+                      </div> <svg class="icon icon-link jobs-item__link-icon">
+                        <use xlink:href="#link" />
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3 col-6 jobs-list__col">
+                <a href="#" class="jobs-item">
+                  <p class="jobs-item__title">Cannabis jobs <br>
+                    and markets, <br>
+                    state by state</p>
+                  <div class="jobs-item-flip">
+                    <div class="jobs-item-flip__front">
+                      <div class="masked-img-wrapper jobs-item__masked-img">
+                        <img src="img/job.jpg" alt="image" class="masked-img" loading="lazy">
+                      </div>
+                    </div>
+                    <div class="jobs-item-flip__back">
+                      <div class="masked-img-wrapper jobs-item__masked-img jobs-item__masked-img_back">
+                        <img src="img/job.jpg" alt="image" class="masked-img masked-image-animation" loading="lazy">
+                      </div> <svg class="icon icon-link jobs-item__link-icon">
+                        <use xlink:href="#link" />
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3 col-6 jobs-list__col">
+                <a href="#" class="jobs-item">
+                  <p class="jobs-item__title">Cannabis jobs <br>
+                    and markets, <br>
+                    state by state</p>
+                  <div class="jobs-item-flip">
+                    <div class="jobs-item-flip__front">
+                      <div class="masked-img-wrapper jobs-item__masked-img">
+                        <img src="img/job.jpg" alt="image" class="masked-img" loading="lazy">
+                      </div>
+                    </div>
+                    <div class="jobs-item-flip__back">
+                      <div class="masked-img-wrapper jobs-item__masked-img jobs-item__masked-img_back">
+                        <img src="img/job.jpg" alt="image" class="masked-img masked-image-animation" loading="lazy">
+                      </div> <svg class="icon icon-link jobs-item__link-icon">
+                        <use xlink:href="#link" />
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-3 col-6 jobs-list__col">
+                <a href="#" class="jobs-item">
+                  <p class="jobs-item__title">Cannabis jobs <br>
+                    and markets, <br>
+                    state by state</p>
+                  <div class="jobs-item-flip">
+                    <div class="jobs-item-flip__front">
+                      <div class="masked-img-wrapper jobs-item__masked-img">
+                        <img src="img/job.jpg" alt="image" class="masked-img" loading="lazy">
+                      </div>
+                    </div>
+                    <div class="jobs-item-flip__back">
+                      <div class="masked-img-wrapper jobs-item__masked-img jobs-item__masked-img_back">
+                        <img src="img/job.jpg" alt="image" class="masked-img masked-image-animation" loading="lazy">
+                      </div> <svg class="icon icon-link jobs-item__link-icon">
+                        <use xlink:href="#link" />
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-none d-lg-block">
+            <div class="text-field homegrown-section__desc">
+              <p>Here you can find educational resources and research-backed facts about Cannabis and the Cannabis industry.</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <footer class="footer" id="contacts">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-2 offset-xl-2 col-md-4 footer__logo-col">
+            <a href="#" class="logo footer__logo">
+              <img src="img/footer-logo.svg" alt="grand roosevelt" class="logo__img">
+            </a>
+          </div>
+          <div class="col-xl-5 offset-xl-3 col-md-8">
+            <div class="footer-contact">
+              <div class="contact-item">
+                <a href="#hometown" class="contact-item__inner">
+                  Hometown Story
+                </a>
+              </div>
+              <div class="contact-item">
+                <a href="#homegrown" class="contact-item__inner">
+                  Homegrown Talent
+                </a>
+              </div>
+              <div class="contact-item">
+                <a href="#experiences" class="contact-item__inner">
+                  Homemade Cannabis Experiences
+                </a>
+              </div>
+              <div class="contact-item">
+                <a href="#homeroom" class="contact-item__inner">
+                  Homeroom
+                </a>
+              </div>
+              <div class="contact-item">
+                <a href="#contacts" class="contact-item__inner">
+                  Contacts
+                </a>
+              </div>
+              <div class="contact-item">
+                <a href="tel:+13130000000" class="contact-item__inner">
+                  +1 313-000-0000
+                </a>
+              </div>
+              <div class="contact-item">
+                <span class="contact-item__inner">
+	            1 Hart Plaza, Detroit, MI 48226, USA
+	            </span>
+              </div>
+              <div class="social-networks">
+                <a href="#" target="_blank" class="social-networks-item">
+                  <svg class="icon icon-fb social-networks-item__icon">
+                    <use xlink:href="#fb" />
+                  </svg> </a>
+                <a href="#" target="_blank" class="social-networks-item">
+                  <svg class="icon icon-instagram social-networks-item__icon">
+                    <use xlink:href="#instagram" />
+                  </svg> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-2 offset-xl-2">
+            <p class="copyright">
+              Grand&Roosvelt ©, 2022
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script defer="defer" src="js/libs.js"></script>
+    <script defer="defer" src="js/common.js"></script>
+  </body>
+
+</html>
